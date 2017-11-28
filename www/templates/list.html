@@ -1,0 +1,22 @@
+<ion-view view-title="Cartões">
+  <ion-content>
+    <div class="list-inset">
+      <button class="button button-block icon-left ion-card button-balanced" ng-click="vm.novoCartao()">Novo Cartão</button>
+      <button id="abrirCalendario" class="button button-block icon-left ion-card button-balanced" ng-click="vm.abrirCalendario()">Criar Evento</button>
+    </div>
+
+    <ion-list can-swipe="true">
+      <ion-item ng-click="vm.abrirCartao(cartao.id)" ng-repeat="cartao in vm.cartoes">
+          <i class="icon ion-card dark"></i>
+          <h2>{{cartao.bandeira.descricao}}</h2>
+          <h2>
+            <br/>Limite mensal, {{cartao.limite | currency}}
+            <br/>Saldo disponível, {{cartao.saldo | currency}}</h2>
+          <p>Data de Abertura, {{cartao.dataAbertura | date: 'dd/MM/yyyy' }}
+            <br/> Data de Fechamento, {{cartao.dataFechamento | date: 'dd/MM/yyyy' }}
+            <br/> Data de Faturamento, {{cartao.dataVencimento | date: 'dd/MM/yyyy' }}</p>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view view-title="Cadastro">
+  <ion-content>
+
+    <div class="list list-inset">
+      <label class="item item-input item-select">
+        <i class="icon ion-asterisk assertive"></i>
+        <div class="input-label">
+          Cartão
+        </div>
+        <select ng-model="vm.service.entidade.idBandeira">
+          <option ng-selected="true" value="">Selecione</option>
+          <option ng-repeat="bandeira in vm.bandeiras" ng-value="{{bandeira.id}}">{{bandeira.descricao}}</option>
+        </select>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Abertura de crédito</span>
+        <input type="date" ng-model="vm.service.entidade.dataAbertura">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Fechamento de crédito</span>
+        <input type="date" ng-model="vm.service.entidade.dataFechamento">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Vencimento da fatura</span>
+        <input type="date" ng-model="vm.service.entidade.dataVencimento">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Limite</span>
+        <input type="text" placeholder="1000,00" ng-model="vm.service.entidade.limite" ui-number-mask>
+      </label>
+      <div class="button-bar">
+        <button class="button button-block button-dark" ng-click="vm.cadastrar()">
+        Incluir
+      </button>
+        <button class="button button-block button-stable" ng-click="vm.service.limpar()">
+        Limpar
+      </button>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

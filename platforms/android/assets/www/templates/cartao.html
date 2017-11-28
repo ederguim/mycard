@@ -1,0 +1,17 @@
+<ion-view view-title="Cartão">
+  <ion-content>
+    <div class="list-inset">
+      <button class="button button-block icon-left ion-plus-circled button-assertive" ng-click="vm.novaDespesa()">Nova despesa</button>
+    </div>
+    <div class="list card" ng-repeat="despesa in vm.despesas">
+      <div class="item item-icon-left">
+        <p>Data da Compra, {{despesa.dataCompra | date: 'dd/MM/yyyy' }}
+          <br/> Descrição, {{despesa.descricao}}
+          <br/> Valor, {{despesa.valor | currency}}</p>
+          <a class="button button-small icon-left ion-edit button-clear button-dark" ng-click="vm.editar(despesa.id)"></a>
+          <a class="button button-small icon-left ion-trash-a button-clear button-dark" ng-click="vm.excluir(despesa.id)"></a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

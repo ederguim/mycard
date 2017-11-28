@@ -1,0 +1,29 @@
+<ion-view view-title="Despesa">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input item-stacked-label">
+         <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Data da Compra:</span>
+        <input type="date" ng-model="vm.service.entidade.dataCompra">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Estabelecimento:</span>
+        <input type="text" ng-model="vm.service.entidade.descricao">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <i class="icon ion-asterisk assertive"></i>
+        <span class="input-label">Valor:</span>
+        <input type="text" placeholder="100,00" ng-model="vm.service.entidade.valor" ui-number-mask>
+      </label>
+      <div class="button-bar">
+      <button class="button button-block button-dark" ng-click="vm.cadastrar()">
+        Incluir
+      </button>
+      <button class="button button-block button-stable" ng-click="vm.service.limpar()">
+        Limpar
+      </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
